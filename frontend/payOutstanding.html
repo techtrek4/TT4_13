@@ -111,6 +111,7 @@
 
                 <div class="mt-3 input-group" v-if="selected_loan != 'Select A Loan'">
                     <div class="row">
+                        <p>You have an outstanding amount of ${{outstanding_amt}} </p>
                         Please input the amount you want to pay: S$ <input type="text" v-model="amount_to_pay">
                     </div>
                     
@@ -132,7 +133,8 @@
                     username: '',
                     all_loans: ['mobile loan', "electricity bill", "bank loan", "television loan"],
                     selected_loan: 'Select A Loan',
-                    amount_to_pay: '',
+                    outstanding_amt: 393246,
+                    amount_to_pay: 5000,
                     loan_id: 1
                 }
             }
