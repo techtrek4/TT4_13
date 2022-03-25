@@ -6,7 +6,7 @@ import bcrypt
 
 app = Flask(__name__) 
 login_api = Blueprint('login_api', __name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db' # define location of database to be, in relative path
+app.config['MYSQL_DATABASE_URI'] = 'mysql:///database.db'
 db = MySQLdb.connect(app) #wrap app 
 
 # @login_api.record
