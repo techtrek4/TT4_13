@@ -5,8 +5,8 @@ import mysql.connector
 app = Flask(__name__)
 
 # CONFIGURE YOUR ENV HERE
-USERNAME = 'jaivigneshvenugopal'
-PASSWORD = ''
+USERNAME = 'root'
+PASSWORD = 'xxxx'
 HOST = 'localhost'
 
 connection = mysql.connector.connect(
