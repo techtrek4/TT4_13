@@ -23,6 +23,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `customer_phone` varchar(50) DEFAULT NULL,
   `customer_address` varchar(50) NOT NULL,
   `balance` decimal(38,2) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`CustomerId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
