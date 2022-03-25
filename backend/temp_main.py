@@ -100,6 +100,8 @@ def read_payments():
         "payload": [copy(payment)] * 3
     }
 
+    return jsonify(to_send)
+
 
 # main driver function
 if __name__ == '__main__':
