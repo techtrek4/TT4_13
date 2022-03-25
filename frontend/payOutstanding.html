@@ -48,7 +48,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="https://www.dbs.com.sg/">
             <img
-              src="images/dbs-bank-logo2.png"
+              src="images/dbs logo.png"
               id="logo"
               class="d-inline-block align-text-top"
             />
@@ -99,27 +99,31 @@
       <!--  end of nav bar -->
 
       <div class="container-fluid" id="main-box">
-          <h2 class="text-center">Which loan do you want to pay today?</h2>
+        <h2 class="text-center mb-3">Which loan do you want to pay today?</h2>
 
-          
-
-          <div class="row">
-              <div class="col"></div>
-              <div class="col">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
                 <select class="form-select text-center" v-model="selected_loan" v-on:change="getLoanAmount()">
                     <option>Select A Loan</option>
                     <option v-for="loan of all_loans" :value="loan_id">{{loan}}</option>
                 </select>
 
                 <div class="mt-3 input-group" v-if="selected_loan != 'Select A Loan'">
-                    Please input the amount you want to pay: S$ <input type="text" v-model="amount_to_pay">
+                    <div class="row">
+                        Please input the amount you want to pay: S$ <input type="text" v-model="amount_to_pay">
+                    </div>
+                    
+                    <div class="row mt-4 d-flex align-items-center text-center">
+                        <!-- <div class="col"></div> -->
+                        <button type="button" class="btn btn-info">Pay Now</button>
+                        <!-- <div class="col"></div> -->
+                    </div>
                 </div>
-              </div>
-              <div class="col"></div>
-          </div>
-          
-
-      </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
     
       <script>
           Vue.createApp({

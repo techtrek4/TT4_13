@@ -51,7 +51,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="https://www.dbs.com.sg/">
             <img
-              src="images/dbs-bank-logo2.png"
+              src="images/dbs logo.png"
               id="logo"
               class="d-inline-block align-text-top"
             />
@@ -102,14 +102,14 @@
       <!--  end of nav bar -->
 
     <div class="container-fluid" id="main-box">
-        <div class="display-6 text-danger mt-2 ms-2">Welcome, XXX</div>
+        <div class="display-6 text-danger mt-2 ms-2">Welcome, {{username}}</div>
 
         <p class="mt-4 fs-3">Apply For A New Loan</p>
 
         
 
         <div class="row">
-            <div class="col d-none d-lg-block"><img src="./images/happypeople.jpg" id="human"></div>
+            <div class="col d-none d-lg-block"><img src="./images/bank-sg.png" id="human"></div>
 
             <div class="col"> <!--  loan stuff starts here -->
                 <p class="fs-5 text-center">I want to borrow</p>
@@ -166,7 +166,7 @@
         Vue.createApp({
             data() {
                 return {
-                    username: '',
+                    username: 'Jane Yap',
                     loan_type: '',
                     loan_amount: 20000,
                     loan_period: 2,
