@@ -10,6 +10,7 @@ export default function RegisterPage() {
     password: "",
     fullname: "",
     phonenumber: "",
+    address: "",
   });
 
   const handleSubmit = (e) => {
@@ -20,6 +21,7 @@ export default function RegisterPage() {
       customerPassword: details.password,
       customerFullName: details.fullname,
       customerPhone: details.phonenumber,
+      customerAddress: details.address,
     });
   };
 
