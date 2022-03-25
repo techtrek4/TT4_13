@@ -1,0 +1,8 @@
+*** returns user's balance from customer table ***
+SELECT balance
+FROM customer
+
+*** returns loan_amount from loan table ***
+SELECT loan_amount
+FROM loan
+
