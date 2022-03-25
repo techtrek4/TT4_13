@@ -18,6 +18,7 @@ export default function HomePage() {
             <h1 className="main-title home-page-title">welcome to our app</h1>
                 <p style={{ color: 'Black' }} className="main-para text-center">Current Balance : $0 </p>
                 <p style={{ color: 'Black' }} className="main-para text-center">Current Loans </p>
+                <div className= 'text-center'>
                 <table align="center">
                     <tr>
                         <th>Loan</th>
@@ -32,6 +33,7 @@ export default function HomePage() {
                     )
                     })}
                 </table>
+                </div>
                 <p style={{ color: 'Black' }} className="main-para text-center">Loan History </p>
                 <table align="center">
                     <tr>
