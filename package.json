@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "flask": "^0.2.10",
+    "mysqlconnector": "^1.0.21",
+    "pip": "^0.0.1",
+    "requests": "^0.3.0"
+  }
+}
