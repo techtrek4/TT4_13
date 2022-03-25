@@ -1,38 +1,99 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-import '../../App.css'
+import "../../App.css";
 
-export default function SignUpPage() {
+export default function RegisterPage() {
+  const [details, setDetails] = useState({
+    username: "",
+    password: "",
+    fullname: "",
+    phonenumber: "",
+  });
 
-    return (
-        <div className="text-center m-5-auto">
-            <h2>Join us</h2>
-            <h5>Create your personal account</h5>
-            <form action="/home">
-                <p>
-                    <label>Username</label><br/>
-                    <input type="text" name="first_name" required />
-                </p>
-                <p>
-                    <label>Email address</label><br/>
-                    <input type="email" name="email" required />
-                </p>
-                <p>
-                    <label>Password</label><br/>
-                    <input type="password" name="password" requiredc />
-                </p>
-                <p>
-                    <input type="checkbox" name="checkbox" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.
-                </p>
-                <p>
-                    <button id="sub_btn" type="submit">Register</button>
-                </p>
-            </form>
-            <footer>
-                <p><Link to="/">Back to Homepage</Link>.</p>
-            </footer>
-        </div>
-    )
+  console.log(details);
 
+  const handleSubmit = (e) => {
+    console.log("form submitted");
+  };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setDetails({ ...details, [name]: value });
+  };
+
+  return (
+    <div className="text-center m-5-auto">
+      <h2>Create a DBS account</h2>
+      <form onSubmit={handleSubmit} action="/home">
+        <p>
+          <label>Username</label>
+          <br />
+          <input
+            type="text"
+            name="username"
+            value={details.username}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <label>Password</label>
+          <br />
+          <input
+            type="password"
+            name="password"
+            value={details.password}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <label>Full name</label>
+          <br />
+          <input
+            type="text"
+            name="fullname"
+            value={details.fullname}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <label>Phone number</label>
+          <br />
+          <input
+            type="number"
+            name="phonenumber"
+            value={details.phonenumber}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <label>Address</label>
+          <br />
+          <input
+            type="text"
+            name="address"
+            value={details.address}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <button className="button" type="submit">
+            Register
+          </button>
+        </p>
+      </form>
+      <footer>
+        <p>
+          <Link to="/">Back</Link>
+        </p>
+      </footer>
+    </div>
+  );
 }
