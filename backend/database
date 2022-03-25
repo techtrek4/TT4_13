@@ -72,12 +72,13 @@ INSERT INTO `customerloan` (`CustomerLoanId`, `CustomerId`, `LoanId`) VALUES
 CREATE TABLE IF NOT EXISTS `loan` (
   `LoanId` int(11) NOT NULL AUTO_INCREMENT,
   `loan_amount` decimal(38,2) NOT NULL,
+  `loan_remainder` decimal(38,2) NOT NULL,
   PRIMARY KEY (`LoanId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table loan_management.loan: ~10 rows (approximately)
 /*!40000 ALTER TABLE `loan` DISABLE KEYS */;
-INSERT INTO `loan` (`LoanId`, `loan_amount`, 'loan_remainder') VALUES
+INSERT INTO `loan` (`LoanId`, `loan_amount`, `loan_remainder`) VALUES
 	(1, 135532.99, 135532.99),
 	(2, 34367.53, 34367.53),
 	(3, 45086.74, 45086.74),
