@@ -21,7 +21,7 @@ Vue.createApp({
     methods: {
         calcPayablePerMonth() {
             console.log("============== calcPayablePerMonth ==============")
-            let final_amt = (this.loan_amount * (this.interest_rate / 100)) / (this.loan_period * 12)
+            let final_amt = (this.loan_amount * ((this.interest_rate / 100)/12)) / (this.loan_period * 12)
 
 
         },

@@ -162,7 +162,50 @@
         </div>
     </div>
 
-    <script src="/frontend/applyNewLoan.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    username: '',
+                    loan_type: '',
+                    loan_amount: 20000,
+                    loan_period: 2,
+                    interest_rate: 2.5
+                }
+            },
+
+            created() {
+                console.log("============== localStorage customer id ================")
+                if (localStorage.getItem("CustomerId")) {
+                    this.username = localStorage.getItem("CustomerId") // change accordingly afterwards
+                }
+            },
+
+            methods: {
+                calcPayablePerMonth() {
+                    console.log("============== calcPayablePerMonth ==============")
+                    let interest = (this.loan_amount * (this.interest_rate / 100)) / (this.loan_period * 12)
+                    var final_amt = interest + (this.loan_amount/12)
+                    return Math.round((final_amt + Number.EPSILON) * 100) / 100
+
+                },
+
+                addNewLoan() {
+                    console.log("**** [START] call addNewLoan() *****")
+                    
+                    let url = ""
+                    axios.get(url)
+                    .then(response => {
+                        this.buildings = response.data.records
+                    })
+                    .catch(error => { 
+                        console.log(error.message)
+                    })  
+                }
+            }
+
+            }).mount("#main-box")
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

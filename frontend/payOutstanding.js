@@ -4,7 +4,8 @@ Vue.createApp({
             username: '',
             all_loans: ['mobile loan'],
             selected_loan: '',
-            amount_to_pay: ''
+            amount_to_pay: '',
+            loan_id: 1
         }
     },
 
