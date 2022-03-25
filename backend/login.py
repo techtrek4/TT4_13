@@ -18,7 +18,7 @@ db = MySQLdb.connect(app) #wrap app
 
 @ login_api.route('/login', methods=['POST'])
 def login():
-    db = app.config["SQLALCHEMY_DATABASE_URI"]
+    db = app.config["MYSQL_DATABASE_URI"]
     result = db.UserModel.find_one({'id': requests.form['id']})
     hashed_password = result['password']
     password = requests.form['password']
