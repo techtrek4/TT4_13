@@ -77,17 +77,17 @@ CREATE TABLE IF NOT EXISTS `loan` (
 
 -- Dumping data for table loan_management.loan: ~10 rows (approximately)
 /*!40000 ALTER TABLE `loan` DISABLE KEYS */;
-INSERT INTO `loan` (`LoanId`, `loan_amount`) VALUES
-	(1, 135532.99),
-	(2, 34367.53),
-	(3, 45086.74),
-	(4, 140123.37),
-	(5, 57800.21),
-	(6, 13165.14),
-	(7, 82062.24),
-	(8, 12416.32),
-	(9, 17250.83),
-	(10, 46431.85);
+INSERT INTO `loan` (`LoanId`, `loan_amount`, 'loan_remainder') VALUES
+	(1, 135532.99, 135532.99),
+	(2, 34367.53, 34367.53),
+	(3, 45086.74, 45086.74),
+	(4, 140123.37, 140123.37),
+	(5, 57800.21, 57800.21),
+	(6, 13165.14, 13165.14),
+	(7, 82062.24, 82062.24),
+	(8, 12416.32, 12416.32),
+	(9, 17250.83, 17250.83),
+	(10, 46431.85, 46431.85);
 /*!40000 ALTER TABLE `loan` ENABLE KEYS */;
 
 -- Dumping structure for table loan_management.payment
