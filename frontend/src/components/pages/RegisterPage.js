@@ -12,10 +12,15 @@ export default function RegisterPage() {
     phonenumber: "",
   });
 
-  console.log(details);
-
   const handleSubmit = (e) => {
     console.log("form submitted");
+    e.preventDefault();
+    addCustomerMutation.mutate({
+      customerUser: details.username,
+      customerPassword: details.password,
+      customerFullName: details.fullname,
+      customerPhone: details.phonenumber,
+    });
   };
 
   const handleChange = (e) => {
@@ -23,6 +28,25 @@ export default function RegisterPage() {
     const value = e.target.value;
     setDetails({ ...details, [name]: value });
   };
+
+  const addCustomer = (data) => axios.put("/create-customer", data);
+
+  const addCustomerMutation = useMutation(addCustomer, {
+    onMutate: (variables) => {
+      setIsLoading(true);
+    },
+
+    onSettled: (data, error, variables, context) => {
+      if (error) {
+        console.log("error in updating database");
+      } else {
+        console.log("mutation settled");
+      }
+    },
+    onSuccess: () => {
+      console.log("successfully updated database");
+    },
+  });
 
   return (
     <div className="text-center m-5-auto">

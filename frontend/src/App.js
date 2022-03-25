@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./components/pages/LandingPage";
@@ -10,6 +10,7 @@ import HomePage from "./components/pages/HomePage";
 import "./App.css";
 
 export default function App() {
+  const [token, setToken] = useState();
   return (
     <Router>
       <div>

@@ -19,6 +19,18 @@ export default function LoginPage() {
     setLoginDetails({ ...loginDetails, [name]: value });
   };
 
+  const loginAuth = (username, password) =>
+    axios.get("/login-auth", {
+      params: {
+        id: username,
+        pw: password,
+      },
+    });
+
+  const authenticate = useQuery(["authenticate", email], () =>
+    loginAuth(username, password)
+  );
+
   return (
     <div className="text-center m-5-auto">
       <h2>Login</h2>
