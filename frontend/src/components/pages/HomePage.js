@@ -53,7 +53,7 @@ export default function HomePage() {
                     })}
                 </table>
 
-            <Link to = "/loans">
+            <Link to="/loan">
                 <button className="button">Loans</button>&nbsp;
             </Link>
             <Link to="/">
