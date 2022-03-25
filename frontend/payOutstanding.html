@@ -23,6 +23,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="https://unpkg.com/vue@3"></script>
+
     <style>
         #logo {
             width: 110px;
@@ -41,13 +43,6 @@
     </style>
 </head>
 <body>
-    <script type="importmap">
-        {
-          "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-          }
-        }
-      </script>
     <!-- this navbar has been updated -->
     <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
         <div class="container-fluid">
@@ -104,8 +99,16 @@
       <!--  end of nav bar -->
 
       <div class="container-fluid" id="main-box">
-          <h2>Which loan do you want to pay today?</h2>
+          <h2 class="text-center">Which loan do you want to pay today?</h2>
 
+          <select class="text-center" v-model="selected_loan" v-on:change="getLoanAmount()">
+              <option>Select A Loan</option>
+              <option v-for="all_loans" :value="all_loans.loan_id">mobile phone loan</option>
+          </select>
+
+          <div v-if="selected_loan != 'Select A Loan'">
+            Please input the amount you want to pay: S$ <input type="text" v-model="amount_to_pay">
+          </div>
 
       </div>
     
