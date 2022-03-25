@@ -1,31 +1,64 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import '../../App.css'
+import "../../App.css";
 
-export default function SignInPage() {
-    return (
-        <div className="text-center m-5-auto">
-            <h2>Sign in to us</h2>
-            <form action="/home">
-                <p>
-                    <label>Username or email address</label><br/>
-                    <input type="text" name="first_name" required />
-                </p>
-                <p>
-                    <label>Password</label>
-                    <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
-                    <br/>
-                    <input type="password" name="password" required />
-                </p>
-                <p>
-                    <button id="sub_btn" type="submit">Login</button>
-                </p>
-            </form>
-            <footer>
-                <p>First time? <Link to="/register">Create an account</Link>.</p>
-                <p><Link to="/">Back to Homepage</Link>.</p>
-            </footer>
-        </div>
-    )
+export default function LoginPage() {
+  const [loginDetails, setLoginDetails] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleSubmit = (e) => {
+    console.log("form submitted");
+  };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setDetails({ ...loginDetails, [name]: value });
+  };
+
+  return (
+    <div className="text-center m-5-auto">
+      <h2>Login</h2>
+      <form action="/home" onSubmit={handleSubmit}>
+        <p>
+          <label>Username</label>
+          <br />
+          <input
+            type="text"
+            name="username"
+            value={loginDetails.username}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <label>Password</label>
+          <br />
+          <input
+            type="password"
+            name="password"
+            value={loginDetails.password}
+            onChange={handleChange}
+            required
+          />
+        </p>
+        <p>
+          <button className="button" type="submit">
+            Login
+          </button>
+        </p>
+      </form>
+      <footer>
+        <p>
+          No account? <Link to="/register">Create an account</Link>.
+        </p>
+        <p>
+          <Link to="/">Back</Link>
+        </p>
+      </footer>
+    </div>
+  );
 }
