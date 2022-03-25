@@ -79,7 +79,7 @@ def create_payment():
 @app.route('/read_balance')
 def read_balance():
     customer_id = request.args.get('CustomerId', type=int)
-    sql_statement = ""
+    sql_statement = """SELECT balance FROM customer WHERE CustomerId={};""".format(customer_id)
 
     try:
         cursor.execute(sql_statement)
@@ -90,11 +90,11 @@ def read_balance():
         }
         return jsonify(to_send)
 
-    row = cursor.fetchone()
+    balance = cursor.fetchone()[0]
     message = "success"
     payload = {
         "message": "success",
-        "payload": row['balance'],
+        "payload": balance,
     }
 
     to_send = {
@@ -222,12 +222,12 @@ def read_loan_amount():
         }
         return jsonify(to_send)
 
-    row = cursor.fetchone()
+    loan_amount = cursor.fetchone()[0]
 
     to_send = {
         "status_code": 200,
         "message": "success",
-        "loan_amount": row["loan_amount"]
+        "loan_amount": loan_amount
     }
 
     return jsonify(to_send)
