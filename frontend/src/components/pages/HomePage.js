@@ -15,11 +15,11 @@ const CurrentLoans = [
 export default function HomePage() {
     return (
         <div className="text-center m-5-auto">
-            <h1 className="main-title home-page-title">welcome to our app</h1>
+            <h1 className="main-title home-page-title">Welcome to our app</h1>
                 <p style={{ color: 'Black' }} className="main-para text-center">Current Balance : $0 </p>
                 <p style={{ color: 'Black' }} className="main-para text-center">Current Loans </p>
                 <div className= 'text-center'>
-                <table align="center">
+                <table>
                     <tr>
                         <th>Loan</th>
                         <th>Amount</th>
@@ -35,7 +35,7 @@ export default function HomePage() {
                 </table>
                 </div>
                 <p style={{ color: 'Black' }} className="main-para text-center">Loan History </p>
-                <table align="center">
+                <table>
                     <tr>
                         <th>Loan</th>
                         <th>Amount</th>
