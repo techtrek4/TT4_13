@@ -1,6 +1,4 @@
-
-
-const main = Vue.createApp({
+Vue.createApp({
 
     // Data Properties
     data() {
@@ -13,20 +11,33 @@ const main = Vue.createApp({
         }
     },
 
-    created: function() {
-        if (localStorage.getItem("id")) {
-            this.username = localStorage.getItem("id") // change accordingly afterwards
+    created() {
+        console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+        if (localStorage.getItem("CustomerId")) {
+            this.username = localStorage.getItem("CustomerId") // change accordingly afterwards
         }
     },
 
     methods: {
         calcPayablePerMonth() {
             console.log("============== calcPayablePerMonth ==============")
-            let final_amt = (this.loan_amount * (this.interest_rate / 100)) / (this.loan_period * 12)
+            let final_amt = (this.loan_amount * ((this.interest_rate / 100)/12)) / (this.loan_period * 12)
 
+
+        },
+
+        addNewLoan() {
+            console.log("**** [START] call addNewLoan() *****")
+            
+            let url = ""
+            axios.get(url)
+            .then(response => {
+                this.buildings = response.data.records
+            })
+            .catch(error => { 
+                console.log(error.message)
+            })  
         }
     }
 
-})
-
-main.mount("#main-box")
+}).mount("#main-box")
