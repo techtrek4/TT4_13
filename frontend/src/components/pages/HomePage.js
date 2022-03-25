@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="text-center m-5-auto">
             <h1 className="main-title home-page-title">Welcome to our app</h1>
                 <p style={{ color: 'Black' }} className="main-para text-center">Current Balance : $0 </p>
-                <p style={{ color: 'Black' }} className="main-para text-center">Current Loans </p>
+                <p style={{ color: 'Black', fontWeight: 'bold' }} className="main-para text-center">Current Loans </p>
                 <div className= 'text-center'>
                 <table>
                     <tr>
@@ -34,7 +34,10 @@ export default function HomePage() {
                     })}
                 </table>
                 </div>
-                <p style={{ color: 'Black' }} className="main-para text-center">Loan History </p>
+                <p>
+                    {""}
+                </p>
+                <p style={{ color: 'Black', fontWeight: 'bold'}} className="main-para text-center">Loan History </p>
                 <table>
                     <tr>
                         <th>Loan</th>
@@ -50,11 +53,11 @@ export default function HomePage() {
                     })}
                 </table>
 
-            <Link to = "/Loans">
-                <button className="primary-button">Loans</button>
+            <Link to = "/loans">
+                <button className="button">Loans</button>&nbsp;
             </Link>
             <Link to="/">
-                <button className="primary-button">Log out</button>
+                <button className="button">Log out</button>
             </Link>
         </div>
     );

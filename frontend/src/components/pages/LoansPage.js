@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 import '../../App.css'
 
-export default function LoansPage({ newExpense, handleChange, handleSubmit }){
+export default function LoansPage(){
     return (
         <Link to="/">
-        <button className="primary-button">Log out</button>
+        <button className="button">Log out</button>
         </Link>
       );
 

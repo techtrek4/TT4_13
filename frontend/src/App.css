@@ -30,7 +30,7 @@ margin-left: auto;
 }
 
 .text-center m-5-auto {
-  height: 100vh; /* Magic here */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
