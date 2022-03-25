@@ -26,7 +26,8 @@ def hello():
 @app.route('/create_loan')
 def create_loan():
     customer_id = request.args.get('CustomerId', type=int)
-    loan_amount = request.args.get('loan_amount', type=int)
+    customer_loan_id = request.args.get('CustomerLoanId', type=int)
+    loan_amount = request.args.get('loan_amount', type=float)
 
     sql_statement = ''
 
