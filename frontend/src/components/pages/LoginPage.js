@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useQuery } from "react-query";
 
 import "../../App.css";
 
@@ -27,9 +29,9 @@ export default function LoginPage() {
       },
     });
 
-  const authenticate = useQuery(["authenticate", email], () =>
-    loginAuth(username, password)
-  );
+  // const authenticate = useQuery(["authenticate", username], () =>
+  //   loginAuth(username, password)
+  // );
 
   return (
     <div className="text-center m-5-auto">

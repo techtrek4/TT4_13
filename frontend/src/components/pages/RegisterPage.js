@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+import { useQuery, useMutation } from "react-query";
 
 import "../../App.css";
 
@@ -16,13 +18,20 @@ export default function RegisterPage() {
   const handleSubmit = (e) => {
     console.log("form submitted");
     e.preventDefault();
-    addCustomerMutation.mutate({
+    axios.post("http://127.0.0.1:5000/create-customer", {
       customerUser: details.username,
       customerPassword: details.password,
       customerFullName: details.fullname,
       customerPhone: details.phonenumber,
       customerAddress: details.address,
     });
+    // addCustomerMutation.mutate({
+    //   customerUser: details.username,
+    //   customerPassword: details.password,
+    //   customerFullName: details.fullname,
+    //   customerPhone: details.phonenumber,
+    //   customerAddress: details.address,
+    // });
   };
 
   const handleChange = (e) => {
@@ -31,24 +40,25 @@ export default function RegisterPage() {
     setDetails({ ...details, [name]: value });
   };
 
-  const addCustomer = (data) => axios.put("/create-customer", data);
+  // const addCustomer = (data) =>
+  //   axios.put("http://127.0.0.1:5000/create-customer", data);
 
-  const addCustomerMutation = useMutation(addCustomer, {
-    onMutate: (variables) => {
-      setIsLoading(true);
-    },
+  // const addCustomerMutation = useMutation(addCustomer, {
+  //   onMutate: (variables) => {
+  //     console.log("mutating");
+  //   },
 
-    onSettled: (data, error, variables, context) => {
-      if (error) {
-        console.log("error in updating database");
-      } else {
-        console.log("mutation settled");
-      }
-    },
-    onSuccess: () => {
-      console.log("successfully updated database");
-    },
-  });
+  //   onSettled: (data, error, variables, context) => {
+  //     if (error) {
+  //       console.log("error in updating database");
+  //     } else {
+  //       console.log("mutation settled");
+  //     }
+  //   },
+  //   onSuccess: () => {
+  //     console.log("successfully updated database");
+  //   },
+  // });
 
   return (
     <div className="text-center m-5-auto">
